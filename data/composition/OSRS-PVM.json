@@ -1,0 +1,91 @@
+{
+ "index_id": "OSRS-PVM",
+ "effective_from": 1785196800,
+ "divisor": 1000.0,
+ "members": [
+  {
+   "id": 560,
+   "name": "Death rune",
+   "weight": 0.08333333,
+   "units": 460.2456573978212,
+   "capped": false
+  },
+  {
+   "id": 562,
+   "name": "Chaos rune",
+   "weight": 0.08333333,
+   "units": 784.3341030575448,
+   "capped": false
+  },
+  {
+   "id": 565,
+   "name": "Blood rune",
+   "weight": 0.08333333,
+   "units": 232.17090151645482,
+   "capped": false
+  },
+  {
+   "id": 566,
+   "name": "Soul rune",
+   "weight": 0.08333333,
+   "units": 210.87480077271215,
+   "capped": false
+  },
+  {
+   "id": 2434,
+   "name": "Prayer potion(4)",
+   "weight": 0.08333333,
+   "units": 9.422346655347637,
+   "capped": false
+  },
+  {
+   "id": 3024,
+   "name": "Super restore(4)",
+   "weight": 0.08333333,
+   "units": 8.101310447603336,
+   "capped": false
+  },
+  {
+   "id": 6685,
+   "name": "Saradomin brew(4)",
+   "weight": 0.08333333,
+   "units": 11.610793576667897,
+   "capped": false
+  },
+  {
+   "id": 10925,
+   "name": "Sanfew serum(4)",
+   "weight": 0.08333333,
+   "units": 4.1496569495218525,
+   "capped": false
+  },
+  {
+   "id": 12695,
+   "name": "Super combat potion(4)",
+   "weight": 0.08333333,
+   "units": 6.892902252919508,
+   "capped": false
+  },
+  {
+   "id": 13441,
+   "name": "Anglerfish",
+   "weight": 0.08333333,
+   "units": 32.41669777375429,
+   "capped": false
+  },
+  {
+   "id": 21880,
+   "name": "Wrath rune",
+   "weight": 0.08333333,
+   "units": 241.5888594716779,
+   "capped": false
+  },
+  {
+   "id": 23685,
+   "name": "Divine super combat potion(4)",
+   "weight": 0.08333333,
+   "units": 4.620015061374411,
+   "capped": false
+  }
+ ]
+}

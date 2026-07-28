@@ -1,0 +1,53 @@
+{
+  "index_id": "OSRS-MELEE",
+  "name": "OSRS Melee Weapons Index",
+  "description": "Equal-weighted, liquidity-capped basket of the most traded melee weapons. Measured over 361 days of daily history this basket returned -8.5% at 16% annualised volatility with a -24.2% maximum drawdown, against constituent volatilities of 0.38%-2.60% daily. The diversification is real; the drift is negative, because gp-denominated gear deflates as drops accumulate. This is a trading instrument, not a savings vehicle.",
+  "base_level": 1000.0,
+  "weighting": "equal_weight_liquidity_capped",
+  "rebalance": "quarterly",
+  "review": "semiannual",
+  "max_weight_multiple": 3.0,
+  "notes": [
+    "Abyssal dagger (0.43B gp/24h, 3.70% spread) and Dragon scimitar (0.46B gp/24h, 4.2M gp per 4h window) fail the default screen. They are listed as seeds so the screener rejects them explicitly rather than silently omitting them -- a published index must show its exclusions.",
+    "Abyssal dagger is the cheapest attack surface in this basket: ~65M gp (~55 USD) moves the index 1% against a 24h VWAP NAV.",
+    "Scythe of vitur is carried uncharged. The charged variant has its own item id and a price that embeds consumed blood runes, which would import a consumable's price into a weapons index.",
+    "The candidate pool is deliberately larger than target_size. Membership is decided each review by liquidity rank with entry/exit buffers, so the pool defines what the basket is ABOUT while the rules decide what it HOLDS. Curation cannot be automated away: the API has no item taxonomy."
+  ],
+  "membership": {
+    "target_size": 10,
+    "entry_rank": 8,
+    "exit_rank": 12,
+    "max_additions": 3,
+    "max_buffer_exits": 3
+  },
+  "candidate_item_names": [
+    "Scythe of vitur (uncharged)",
+    "Soulreaper axe",
+    "Inquisitor's mace",
+    "Dragon claws",
+    "Elder maul",
+    "Osmumten's fang",
+    "Ghrazi rapier",
+    "Dragon warhammer",
+    "Blade of saeldor (inactive)",
+    "Abyssal whip",
+    "Dragon scimitar",
+    "Abyssal dagger",
+    "Saradomin sword",
+    "Zamorakian hasta",
+    "Abyssal bludgeon",
+    "Dragon hunter lance",
+    "Voidwaker",
+    "Noxious halberd",
+    "Leaf-bladed battleaxe",
+    "Tzhaar-ket-om",
+    "Granite maul",
+    "Barrelchest anchor",
+    "Dharok's greataxe",
+    "Verac's flail",
+    "Torag's hammers",
+    "Dragon longsword",
+    "Dragon dagger",
+    "Godsword shard 1"
+  ]
+}

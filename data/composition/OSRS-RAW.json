@@ -1,0 +1,70 @@
+{
+ "index_id": "OSRS-RAW",
+ "effective_from": 1785196800,
+ "divisor": 1000.0,
+ "members": [
+  {
+   "id": 257,
+   "name": "Ranarr weed",
+   "weight": 0.11111111,
+   "units": 15.399990134151082,
+   "capped": false
+  },
+  {
+   "id": 383,
+   "name": "Raw shark",
+   "weight": 0.11111111,
+   "units": 119.09624913414267,
+   "capped": false
+  },
+  {
+   "id": 444,
+   "name": "Gold ore",
+   "weight": 0.11111111,
+   "units": 546.1842036335756,
+   "capped": false
+  },
+  {
+   "id": 449,
+   "name": "Adamantite ore",
+   "weight": 0.11111111,
+   "units": 155.7734964644018,
+   "capped": false
+  },
+  {
+   "id": 451,
+   "name": "Runite ore",
+   "weight": 0.11111111,
+   "units": 8.120288300345997,
+   "capped": false
+  },
+  {
+   "id": 453,
+   "name": "Coal",
+   "weight": 0.11111111,
+   "units": 565.5017343960033,
+   "capped": false
+  },
+  {
+   "id": 1513,
+   "name": "Magic logs",
+   "weight": 0.11111111,
+   "units": 107.24151835802859,
+   "capped": false
+  },
+  {
+   "id": 1747,
+   "name": "Black dragonhide",
+   "weight": 0.11111111,
+   "units": 23.58752758161578,
+   "capped": false
+  },
+  {
+   "id": 1749,
+   "name": "Red dragonhide",
+   "weight": 0.11111111,
+   "units": 37.18328820121442,
+   "capped": false
+  }
+ ]
+}

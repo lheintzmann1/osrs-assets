@@ -1,0 +1,51 @@
+{
+  "index_id": "OSRS-PVM",
+  "name": "OSRS PvM Consumables Index",
+  "description": "Equal-weighted, liquidity-capped basket of potions, food and combat runes. The healthiest of the four baskets by some distance: unit volumes run into the tens of millions, buy limits are generous (2,000-25,000), and spreads are homogeneous around 1.6%. Tracks the running cost of endgame PvM rather than the capital cost of gearing for it.",
+  "base_level": 1000.0,
+  "weighting": "equal_weight_liquidity_capped",
+  "rebalance": "quarterly",
+  "review": "semiannual",
+  "max_weight_multiple": 3.0,
+  "notes": [
+    "Consumables are structurally different from gear: supply is produced continuously by players rather than dropped, so prices track production cost and PvM activity instead of drop-rate accumulation. Expect a different drift sign from the gear baskets.",
+    "Ranging potion(4) is the thinnest leg at 1.0B gp/24h and 4.2M gp per 4h window; it sits right on the screen boundary and should be watched.",
+    "Blood and Death runes are the only sub-1000gp items retained. They clear the 50gp floor comfortably and their unit volumes (60M and 46M per day) make bucket-level manipulation impractical.",
+    "The candidate pool is deliberately larger than target_size. Membership is decided each review by liquidity rank with entry/exit buffers, so the pool defines what the basket is ABOUT while the rules decide what it HOLDS. Curation cannot be automated away: the API has no item taxonomy."
+  ],
+  "membership": {
+    "target_size": 12,
+    "entry_rank": 10,
+    "exit_rank": 15,
+    "max_additions": 3,
+    "max_buffer_exits": 3
+  },
+  "candidate_item_names": [
+    "Blood rune",
+    "Prayer potion(4)",
+    "Super restore(4)",
+    "Death rune",
+    "Saradomin brew(4)",
+    "Divine super combat potion(4)",
+    "Anglerfish",
+    "Shark",
+    "Ranging potion(4)",
+    "Chaos rune",
+    "Cosmic rune",
+    "Astral rune",
+    "Nature rune",
+    "Law rune",
+    "Soul rune",
+    "Wrath rune",
+    "Super combat potion(4)",
+    "Extended antifire(4)",
+    "Stamina potion(4)",
+    "Antidote++(4)",
+    "Manta ray",
+    "Dark crab",
+    "Monkfish",
+    "Cooked karambwan",
+    "Bastion potion(4)",
+    "Sanfew serum(4)"
+  ]
+}

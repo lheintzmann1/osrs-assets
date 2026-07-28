@@ -1,0 +1,36 @@
+# Example collection schedule. Install with `crontab -e`.
+#
+# Adjust REPO and the User-Agent. The +30s offsets on the bucket jobs are
+# deliberate: aggregate buckets publish at window close, so firing exactly on
+# the boundary races the publisher and collects the previous bucket twice.
+#
+# Total load: ~1,600 requests/day. The API states no explicit rate limit and
+# describes its intervention threshold as "multiple large queries per second
+# for a sustained period" -- this is three orders of magnitude below that.
+
+REPO=/opt/osrs-assets
+PYTHONPATH=/opt/osrs-assets/src
+OSRS_INDEX_USER_AGENT=osrs-assets/0.1 - @yourhandle on Discord
+
+# /latest -- microstructure and anomaly detection only. Never valuation.
+*     *     * * *   cd $REPO && python3 -m osrs_index collect --latest >> /var/log/osrs-index.log 2>&1
+
+# 5-minute bars
+*/5   *     * * *   sleep 30 && cd $REPO && python3 -m osrs_index collect --step 5m >> /var/log/osrs-index.log 2>&1
+
+# Hourly bars -- the NAV source
+2     *     * * *   cd $REPO && python3 -m osrs_index collect --step 1h >> /var/log/osrs-index.log 2>&1
+
+# 6h and daily bars -- screening and settlement VWAP
+5     */6   * * *   cd $REPO && python3 -m osrs_index collect --step 6h >> /var/log/osrs-index.log 2>&1
+10    0     * * *   cd $REPO && python3 -m osrs_index collect --step 24h >> /var/log/osrs-index.log 2>&1
+
+# Item reference. Additions and removals show up here and nowhere else --
+# watch the log for the "disappeared from /mapping" warning after a game update.
+20    3     * * *   cd $REPO && python3 -m osrs_index collect >> /var/log/osrs-index.log 2>&1
+
+# Index levels, computed one hour behind live so the NAV window is complete
+15    *     * * *   cd $REPO && python3 -m osrs_index build >> /var/log/osrs-index.log 2>&1
+
+# Weekly eligibility recompute
+30    4     * * 1   cd $REPO && python3 -m osrs_index screen >> /var/log/osrs-index.log 2>&1

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSRS Index — Grand Exchange baskets</title>
+<meta name="description" content="Read-only indices over the Old School RuneScape Grand Exchange. No custody, no deposits, no real money.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>📈</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <h1>OSRS&nbsp;Index</h1>
+    <p class="tagline">
+      Read-only indices over the Grand Exchange. Rebuilt twice a day from the
+      <a href="https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices">OSRS Wiki real-time prices API</a>.
+    </p>
+    <p class="disclaimer">
+      <strong>This site holds nothing.</strong> No custody, no deposits, no real money, no tokens.
+      Sending gold to anyone offering an “OSRS ETF” risks your account —
+      <a href="https://github.com/lheintzmann1/osrs-assets/blob/main/docs/feasibility.md">read why</a>.
+    </p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="cards" class="cards" aria-label="Index levels">
+    <p class="loading">Loading…</p>
+  </section>
+
+  <section class="panel" id="detail" hidden>
+    <div class="detail-head">
+      <div>
+        <h2 id="d-name"></h2>
+        <p id="d-desc" class="muted"></p>
+      </div>
+      <div class="detail-level">
+        <span id="d-level" class="big"></span>
+        <span id="d-change" class="change"></span>
+      </div>
+    </div>
+
+    <div id="chart" class="chart"></div>
+    <p id="d-serieshint" class="muted small"></p>
+
+    <div class="grid">
+      <div>
+        <h3>Constituents</h3>
+        <table id="d-constituents" class="tbl">
+          <thead><tr><th>Item</th><th class="r">Weight</th><th class="r">Price (gp)</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="muted small" id="d-capnote"></p>
+      </div>
+
+      <div>
+        <h3>Excluded by the screen</h3>
+        <p class="muted small">
+          A published index that shows only its holdings is unfalsifiable. These
+          candidates were in the pool and did not make the basket.
+        </p>
+        <table id="d-excluded" class="tbl">
+          <thead><tr><th>Item</th><th>Reason</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="callout">
+        <h3>Cost to move this index 1%</h3>
+        <p id="d-attack" class="attack"></p>
+        <p class="muted small">
+          An index is exactly as manipulable as its cheapest member. USD uses the
+          bond rate, which is the <em>expensive</em> end — grey-market gold is
+          cheaper, so real costs are lower.
+        </p>
+      </div>
+      <div class="callout">
+        <h3>Physical replication</h3>
+        <p id="d-capacity" class="attack"></p>
+        <p class="muted small">
+          Max gp of this basket one account could assemble per day under buy
+          limits. There is no sell-side limit: entry is capped, exit is not.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>What this is</h2>
+    <p>
+      Four equal-weighted, liquidity-capped baskets of OSRS items. Membership is
+      decided by liquidity rank with entry/exit buffers, so an item drifting
+      around the boundary is left alone rather than traded every review.
+    </p>
+    <p>
+      Valuation uses volume-weighted hourly buckets, never the
+      <code>/latest</code> endpoint — whose median staleness is 37 minutes and
+      which reports crossed prices on 15.6% of items. An index built on
+      <code>/latest</code> can be moved by a single transaction for about a
+      third of a US cent.
+    </p>
+    <p>
+      Source, methodology and the full feasibility study:
+      <a href="https://github.com/lheintzmann1/osrs-assets">github.com/lheintzmann1/osrs-assets</a>.
+      Not affiliated with Jagex.
+    </p>
+  </section>
+
+</main>
+
+<footer class="wrap muted small">
+  <p id="generated"></p>
+  <p>
+    Charts by <a href="https://github.com/tradingview/lightweight-charts">TradingView Lightweight Charts</a> (Apache 2.0).
+    Price data from the OSRS Wiki, run by volunteers.
+  </p>
+</footer>
+
+<script src="vendor/lightweight-charts.standalone.production.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

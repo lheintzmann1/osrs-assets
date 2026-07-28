@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "osrs-assets"
+version = "0.1.0"
+description = "Read-only index construction over the Old School RuneScape Grand Exchange"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+keywords = ["osrs", "runescape", "index", "grand-exchange", "market-microstructure"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+
+# No runtime dependencies, deliberately. The collector uses urllib and
+# sqlite3 from the standard library so that `git clone && python3 -m
+# osrs_index collect` works with nothing installed. An index nobody can
+# reproduce is not an index.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[project.scripts]
+osrs-index = "osrs_index.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/lheintzmann1/osrs-assets"
+Issues = "https://github.com/lheintzmann1/osrs-assets/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]

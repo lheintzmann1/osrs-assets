@@ -1,0 +1,183 @@
+/* Two-theme, no build step, no framework. The whole site is three files. */
+
+:root {
+  --bg: #ffffff;
+  --panel: #f7f8fa;
+  --border: #e2e5ea;
+  --text: #14171c;
+  --muted: #656d78;
+  --accent: #2f6feb;
+  --up: #157f4b;
+  --down: #b4232c;
+  --warn-bg: #fff6e5;
+  --warn-border: #e8c37a;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --border: #2a313b;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --up: #3fb950;
+    --down: #f85149;
+    --warn-bg: #241c0c;
+    --warn-border: #6b5426;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+.masthead {
+  border-bottom: 1px solid var(--border);
+  padding: 32px 0 24px;
+  margin-bottom: 28px;
+}
+.masthead h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.02em; }
+.tagline { margin: 0 0 14px; color: var(--muted); }
+
+.disclaimer {
+  margin: 0;
+  padding: 10px 14px;
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-border);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* -------------------------------------------------------------- cards */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  transition: border-color .12s, transform .12s;
+}
+.card:hover { border-color: var(--accent); }
+.card[aria-selected="true"] {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+.card .cname { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+.card .clevel { font-size: 24px; font-variant-numeric: tabular-nums; font-weight: 600; }
+.card .cmeta { font-size: 13px; font-variant-numeric: tabular-nums; margin-top: 2px; }
+
+.up { color: var(--up); }
+.down { color: var(--down); }
+
+/* -------------------------------------------------------------- panels */
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 22px;
+  margin-bottom: 24px;
+}
+.panel h2 { margin: 0 0 4px; font-size: 19px; }
+.panel h3 { margin: 0 0 8px; font-size: 15px; }
+
+.detail-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.detail-level { text-align: right; }
+.big { font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.change { display: block; font-variant-numeric: tabular-nums; }
+
+.chart {
+  height: 340px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.callout {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  background: var(--bg);
+}
+.attack { font-family: var(--mono); font-size: 14px; margin: 0 0 8px; }
+
+/* -------------------------------------------------------------- tables */
+
+.tbl { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tbl th, .tbl td {
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.tbl th { color: var(--muted); font-weight: 500; font-size: 13px; }
+.tbl td.r, .tbl th.r { text-align: right; font-variant-numeric: tabular-nums; }
+.tbl .reason { color: var(--muted); font-size: 13px; }
+
+/* Wide content scrolls inside its own box; the page never scrolls sideways. */
+.tbl-scroll { overflow-x: auto; }
+
+.pill {
+  display: inline-block;
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.loading { color: var(--muted); }
+
+footer { padding: 8px 20px 40px; }
+footer p { margin: 4px 0; }
+
+code {
+  font-family: var(--mono);
+  font-size: 0.9em;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 4px;
+}

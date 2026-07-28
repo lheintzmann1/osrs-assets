@@ -1,0 +1,48 @@
+{
+  "index_id": "OSRS-BODY",
+  "name": "OSRS Body Slot Index",
+  "description": "Equal-weighted, liquidity-capped basket of the most traded body-slot armour across melee, ranged and magic. Median constituent spread 1.80%.",
+  "base_level": 1000.0,
+  "weighting": "equal_weight_liquidity_capped",
+  "rebalance": "quarterly",
+  "review": "semiannual",
+  "max_weight_multiple": 3.0,
+  "notes": [
+    "Rune platebody is the clearest illustration of why unit volume is not liquidity: 109,201 units and 4.2B gp traded per day, yet a buy limit of 70 caps one account at 2.7M gp per 4h window. It trades freely and cannot be replicated.",
+    "Torag's platebody (0.20B gp/24h, 3.95% spread) fails the volume and spread screens.",
+    "This basket loses 3-4 of its 10 seeds to screening, which strips it of the thematic coverage that motivated it. Documented as a negative result rather than papered over by loosening the screen.",
+    "The candidate pool is deliberately larger than target_size. Membership is decided each review by liquidity rank with entry/exit buffers, so the pool defines what the basket is ABOUT while the rules decide what it HOLDS. Curation cannot be automated away: the API has no item taxonomy."
+  ],
+  "membership": {
+    "target_size": 10,
+    "entry_rank": 8,
+    "exit_rank": 12,
+    "max_additions": 3,
+    "max_buffer_exits": 3
+  },
+  "candidate_item_names": [
+    "Torva platebody",
+    "Bandos chestplate",
+    "Masori body (f)",
+    "Armadyl chestplate",
+    "Justiciar chestguard",
+    "Ahrim's robetop",
+    "Karil's leathertop",
+    "Dragon platebody",
+    "Rune platebody",
+    "Torag's platebody",
+    "Ancestral robe top",
+    "Dragon chainbody",
+    "Guthan's platebody",
+    "Dharok's platebody",
+    "Verac's brassard",
+    "Elite void top",
+    "Oathplate chest",
+    "Blue d'hide body",
+    "Black d'hide body",
+    "Void knight top",
+    "Bandos armour set",
+    "Proselyte hauberk",
+    "Fighter torso"
+  ]
+}

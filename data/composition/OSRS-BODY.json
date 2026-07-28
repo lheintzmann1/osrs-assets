@@ -1,0 +1,70 @@
+{
+ "index_id": "OSRS-BODY",
+ "effective_from": 1785110400,
+ "divisor": 1000.0,
+ "members": [
+  {
+   "id": 11832,
+   "name": "Bandos chestplate",
+   "weight": 0.15853538,
+   "units": 0.005872125264653066,
+   "capped": false
+  },
+  {
+   "id": 21021,
+   "name": "Ancestral robe top",
+   "weight": 0.15853538,
+   "units": 0.0011205035947360572,
+   "capped": false
+  },
+  {
+   "id": 26384,
+   "name": "Torva platebody",
+   "weight": 0.15853538,
+   "units": 0.0007769255076915162,
+   "capped": false
+  },
+  {
+   "id": 27238,
+   "name": "Masori body (f)",
+   "weight": 0.15853538,
+   "units": 0.0016890190587720497,
+   "capped": false
+  },
+  {
+   "id": 30753,
+   "name": "Oathplate chest",
+   "weight": 0.15853538,
+   "units": 0.0014246885476376387,
+   "capped": false
+  },
+  {
+   "id": 11828,
+   "name": "Armadyl chestplate",
+   "weight": 0.08560136,
+   "units": 0.001968099499763606,
+   "capped": true
+  },
+  {
+   "id": 1127,
+   "name": "Rune platebody",
+   "weight": 0.05470553,
+   "units": 1.131149649861503,
+   "capped": true
+  },
+  {
+   "id": 22327,
+   "name": "Justiciar chestguard",
+   "weight": 0.04369243,
+   "units": 0.003863690070588553,
+   "capped": true
+  },
+  {
+   "id": 4712,
+   "name": "Ahrim's robetop",
+   "weight": 0.02332376,
+   "units": 0.01199504853013819,
+   "capped": true
+  }
+ ]
+}

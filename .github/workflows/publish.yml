@@ -1,0 +1,107 @@
+name: Publish indices
+
+# Twice a day. The indices value off 24h VWAPs, so anything more frequent
+# would republish the same number with more commits.
+#
+# GOTCHA, and it will bite you: GitHub disables scheduled workflows after 60
+# days with no repository activity. Commits pushed by GITHUB_TOKEN do not
+# trigger workflows, and it is not clearly documented whether they reset the
+# inactivity clock. Do not assume they do. If the schedule goes quiet, run
+# this workflow manually from the Actions tab -- that definitely resets it.
+#
+# Cron in Actions is also best-effort. Runs are regularly delayed 5-30 minutes
+# at peak times and are occasionally dropped entirely. Both are fine at this
+# cadence; neither would be fine for anything settling money, which is one
+# more reason this project settles nothing.
+
+on:
+  schedule:
+    - cron: "17 6 * * *"   # 06:17 UTC
+    - cron: "17 18 * * *"  # 18:17 UTC
+  workflow_dispatch:
+    inputs:
+      review:
+        description: "Also re-run membership selection and reset weights"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "indices/**"
+      - ".github/workflows/publish.yml"
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # commit refreshed data/
+  pages: write      # deploy the site
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    env:
+      PYTHONPATH: src
+      # NOT a secret, and it must never become one. This is a public
+      # identifier naming the project and giving the wiki maintainers a route
+      # to reach us before they resort to blocking. A masked User-Agent
+      # defeats the entire purpose of sending one. Set it here at job level so
+      # every step has it -- scoping it per-step is how the offline `restore`
+      # step ended up failing on a variable it never needed.
+      OSRS_INDEX_USER_AGENT: "osrs-assets/0.1 (+https://github.com/${{ github.repository }})"
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Full history: the commit step rebases onto origin before pushing,
+          # and rebase cannot find a merge base in a depth-1 clone.
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # No pip install: the package has no runtime dependencies.
+
+      # data/ is the store of record; SQLite is a cache we never commit.
+      # This step is entirely offline.
+      - name: Rebuild the database from committed data
+        run: python -m osrs_index restore
+
+      - name: Collect today's prices
+        run: python -m osrs_index collect
+
+      - name: Build indices and write site data
+        run: |
+          python -m osrs_index publish \
+            ${{ (github.event_name == 'workflow_dispatch' && inputs.review) && '--review' || '' }}
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "data: index levels for $(date -u +%Y-%m-%d\ %H:%M) UTC"
+            # Another scheduled run may have landed while this one was working.
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
