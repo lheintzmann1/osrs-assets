@@ -1,69 +1,90 @@
 {
  "index_id": "OSRS-RAW",
- "effective_from": 1785196800,
+ "effective_from": 1785574116,
  "divisor": 1000.0,
  "members": [
   {
+   "id": 231,
+   "name": "Snape grass",
+   "weight": 0.08333333,
+   "units": 65.02740535648633,
+   "capped": false
+  },
+  {
    "id": 257,
    "name": "Ranarr weed",
-   "weight": 0.11111111,
-   "units": 15.399990134151082,
+   "weight": 0.08333333,
+   "units": 11.663783778118333,
    "capped": false
   },
   {
    "id": 383,
    "name": "Raw shark",
-   "weight": 0.11111111,
-   "units": 119.09624913414267,
+   "weight": 0.08333333,
+   "units": 85.93946129235226,
    "capped": false
   },
   {
    "id": 444,
    "name": "Gold ore",
-   "weight": 0.11111111,
-   "units": 546.1842036335756,
+   "weight": 0.08333333,
+   "units": 416.8489197014892,
    "capped": false
   },
   {
    "id": 449,
    "name": "Adamantite ore",
-   "weight": 0.11111111,
-   "units": 155.7734964644018,
+   "weight": 0.08333333,
+   "units": 114.47691016805126,
    "capped": false
   },
   {
    "id": 451,
    "name": "Runite ore",
-   "weight": 0.11111111,
-   "units": 8.120288300345997,
+   "weight": 0.08333333,
+   "units": 6.139538828991617,
    "capped": false
   },
   {
    "id": 453,
    "name": "Coal",
-   "weight": 0.11111111,
-   "units": 565.5017343960033,
+   "weight": 0.08333333,
+   "units": 416.92804751833165,
    "capped": false
   },
   {
    "id": 1513,
    "name": "Magic logs",
-   "weight": 0.11111111,
-   "units": 107.24151835802859,
+   "weight": 0.08333333,
+   "units": 81.13058464707537,
    "capped": false
   },
   {
    "id": 1747,
    "name": "Black dragonhide",
-   "weight": 0.11111111,
-   "units": 23.58752758161578,
+   "weight": 0.08333333,
+   "units": 18.321643690751678,
    "capped": false
   },
   {
    "id": 1749,
    "name": "Red dragonhide",
-   "weight": 0.11111111,
-   "units": 37.18328820121442,
+   "weight": 0.08333333,
+   "units": 27.860548321069718,
+   "capped": false
+  },
+  {
+   "id": 3000,
+   "name": "Snapdragon",
+   "weight": 0.08333333,
+   "units": 8.45870569488065,
+   "capped": false
+  },
+  {
+   "id": 6332,
+   "name": "Mahogany logs",
+   "weight": 0.08333333,
+   "units": 392.7212342407208,
    "capped": false
   }
  ]

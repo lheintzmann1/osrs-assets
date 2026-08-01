@@ -1,62 +1,76 @@
 {
  "index_id": "OSRS-MELEE",
- "effective_from": 1784592000,
+ "effective_from": 1785574116,
  "divisor": 1000.0,
  "members": [
   {
+   "id": 13576,
+   "name": "Dragon warhammer",
+   "weight": 0.1,
+   "units": 0.006903285002227305,
+   "capped": false
+  },
+  {
    "id": 13652,
    "name": "Dragon claws",
-   "weight": 0.125,
-   "units": 0.0036690514253662765,
+   "weight": 0.1,
+   "units": 0.0026533489811644937,
+   "capped": false
+  },
+  {
+   "id": 21003,
+   "name": "Elder maul",
+   "weight": 0.1,
+   "units": 0.0011272527443074243,
    "capped": false
   },
   {
    "id": 22486,
    "name": "Scythe of vitur (uncharged)",
-   "weight": 0.125,
-   "units": 0.00011316151884178812,
+   "weight": 0.1,
+   "units": 9.284215689676932e-05,
    "capped": false
   },
   {
    "id": 22978,
    "name": "Dragon hunter lance",
-   "weight": 0.125,
-   "units": 0.0025924619094042584,
+   "weight": 0.1,
+   "units": 0.0023009898877146386,
    "capped": false
   },
   {
    "id": 24417,
    "name": "Inquisitor's mace",
-   "weight": 0.125,
-   "units": 0.0004207814320338401,
+   "weight": 0.1,
+   "units": 0.00033016780853202223,
    "capped": false
   },
   {
    "id": 26219,
    "name": "Osmumten's fang",
-   "weight": 0.125,
-   "units": 0.007969195820395075,
+   "weight": 0.1,
+   "units": 0.0066387539422948704,
    "capped": false
   },
   {
    "id": 27690,
    "name": "Voidwaker",
-   "weight": 0.125,
-   "units": 0.0037691925150959344,
+   "weight": 0.1,
+   "units": 0.0028784025700882084,
    "capped": false
   },
   {
    "id": 28338,
    "name": "Soulreaper axe",
-   "weight": 0.125,
-   "units": 0.00035302615153382026,
+   "weight": 0.1,
+   "units": 0.00026336138752331155,
    "capped": false
   },
   {
    "id": 29796,
    "name": "Noxious halberd",
-   "weight": 0.125,
-   "units": 0.003276355184512901,
+   "weight": 0.1,
+   "units": 0.0028567573199654184,
    "capped": false
   }
  ]

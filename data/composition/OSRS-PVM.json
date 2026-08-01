@@ -1,91 +1,91 @@
 {
  "index_id": "OSRS-PVM",
- "effective_from": 1785196800,
+ "effective_from": 1785574116,
  "divisor": 1000.0,
  "members": [
   {
    "id": 560,
    "name": "Death rune",
-   "weight": 0.08333333,
-   "units": 460.2456573978212,
+   "weight": 0.08389733,
+   "units": 458.38365828099205,
    "capped": false
   },
   {
    "id": 562,
    "name": "Chaos rune",
-   "weight": 0.08333333,
-   "units": 784.3341030575448,
+   "weight": 0.08389733,
+   "units": 797.1115845261226,
    "capped": false
   },
   {
    "id": 565,
    "name": "Blood rune",
-   "weight": 0.08333333,
-   "units": 232.17090151645482,
+   "weight": 0.08389733,
+   "units": 229.34591125397063,
    "capped": false
   },
   {
    "id": 566,
    "name": "Soul rune",
-   "weight": 0.08333333,
-   "units": 210.87480077271215,
+   "weight": 0.08389733,
+   "units": 216.82241011292857,
    "capped": false
   },
   {
    "id": 2434,
    "name": "Prayer potion(4)",
-   "weight": 0.08333333,
-   "units": 9.422346655347637,
+   "weight": 0.08389733,
+   "units": 9.22112394759408,
    "capped": false
   },
   {
    "id": 3024,
    "name": "Super restore(4)",
-   "weight": 0.08333333,
-   "units": 8.101310447603336,
+   "weight": 0.08389733,
+   "units": 8.19083557876896,
    "capped": false
   },
   {
    "id": 6685,
    "name": "Saradomin brew(4)",
-   "weight": 0.08333333,
-   "units": 11.610793576667897,
-   "capped": false
-  },
-  {
-   "id": 10925,
-   "name": "Sanfew serum(4)",
-   "weight": 0.08333333,
-   "units": 4.1496569495218525,
+   "weight": 0.08389733,
+   "units": 11.787766832030462,
    "capped": false
   },
   {
    "id": 12695,
    "name": "Super combat potion(4)",
-   "weight": 0.08333333,
-   "units": 6.892902252919508,
+   "weight": 0.08389733,
+   "units": 6.965267442603984,
    "capped": false
   },
   {
    "id": 13441,
    "name": "Anglerfish",
-   "weight": 0.08333333,
-   "units": 32.41669777375429,
+   "weight": 0.08389733,
+   "units": 34.52357807013152,
    "capped": false
   },
   {
    "id": 21880,
    "name": "Wrath rune",
-   "weight": 0.08333333,
-   "units": 241.5888594716779,
+   "weight": 0.08389733,
+   "units": 234.05748117548472,
    "capped": false
   },
   {
    "id": 23685,
    "name": "Divine super combat potion(4)",
-   "weight": 0.08333333,
-   "units": 4.620015061374411,
+   "weight": 0.08389733,
+   "units": 4.578183133549179,
    "capped": false
+  },
+  {
+   "id": 10925,
+   "name": "Sanfew serum(4)",
+   "weight": 0.07712942,
+   "units": 3.890242387356334,
+   "capped": true
   }
  ]
 }
